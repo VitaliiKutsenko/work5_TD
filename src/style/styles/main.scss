@@ -1,0 +1,105 @@
+@import "../mixins.scss";
+@import "./modal.scss";
+@import "./table.scss";
+
+main {
+  @include small() {
+    padding: 10px;
+    gap: 10px;
+  }
+  overflow: hidden;
+  padding: 22px 38px;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  & .main-nav {
+    @include small() {
+      margin-bottom: 0;
+    }
+    margin-bottom: 64px;
+    & ol li {
+      text-decoration: none;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 21px;
+      display: flex;
+      align-items: center;
+
+      color: #656565;
+      & a {
+        text-decoration: none;
+        color: #656565;
+      }
+    }
+  }
+  & h4 {
+    margin: 35px 0 25px 0;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+
+    color: #343434;
+  }
+  & .messages {
+    @include small() {
+      position: relative;
+      right: 0;
+      top: 0;
+    }
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    gap: 16px;
+    & button {
+      background: rgba(0, 0, 0, 0.0001);
+      border: none;
+      & svg {
+        transition: 0.3s linear;
+      }
+
+      &:hover svg {
+        transition: 0.3s linear;
+        border-radius: 6px;
+        box-shadow: inset 80px 0 5px 3px rgba(255, 255, 0, 0.5);
+      }
+    }
+    &_indicator {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #ffffff;
+      box-shadow: 0 0 16px rgba(136, 167, 245, 0.18);
+      padding: 10px 17px;
+      gap: 11px;
+      border-radius: 6px;
+      &__photo {
+        & img {
+          border-radius: 50%;
+          border: 3px solid rgb(217, 217, 217);
+        }
+      }
+      &__user {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 21px;
+        display: flex;
+        align-items: center;
+        color: #7d7d7d;
+      }
+    }
+    display: flex;
+    flex-direction: row;
+  }
+  & .btn-primary {
+    @include btn(#55c97b, #3fa460);
+  }
+  & .btn-secondary {
+    @include btn(#b1b1b1, #8c8585);
+  }
+}
